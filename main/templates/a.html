@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>Django File Upload</title>
+  <style>
+  
+	h1{
+	text-align:center;
+	}
+	
+    h1 a{
+      font-size: 30px;
+      font-weight: bold;
+      color: #777777;
+	  text-decoration:none;
+    }
+	
+	h1 a:hover{
+
+      color: #123456;
+
+    }
+	
+
+	
+    table {
+      margin: auto;
+    }
+  </style>
+</head>
+ 
+<body>
+  <h1>
+<a href="{% url 'home' %}">{{what}}</a>
+  </h1>
+  <table>
+    <tr>
+      <td>
+        <form action="{% url 'upload1' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		শব্দের সংখ্যা পেতে এখানে ফাইল আপলোড করুন  :  <input type="file" name="file1"/>
+          
+         <input type="submit" value="Upload File" />
+        </form>
+		
+		<form action="{% url 'upload2' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		সকল যুক্তবর্ণ পেতে এখানে ফাইল আপলোড করুন  :  <input type="file" name="file2"/>
+         <input type="submit" value="Upload File" />
+        </form>
+		
+		<form action="{% url 'upload3' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		শব্দের অর্থ পেতে এখানে ফাইল আপলোড করুন  :  <input type="file" name="file3" style="margin-left:10px"/>
+         <input type="submit" value="Upload File" />
+        </form>		
+		
+		<form action="{% url 'upload4' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		শব্দের পদ পেতে এখানে ফাইল আপলোড করুন  :  <input type="file" name="file4" style="margin-left:10px"/>
+         <input type="submit" value="Upload File" />
+        </form>	
+		
+		</br>
+		</br>
+		</br>
+		
+		<form action="{% url 'search1' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		নির্দিষ্ট শব্দের অর্থ পেতে এখানে খুঁজুন  (বাংলা -> ইংরেজি)  :  <input type="text" name="search1" style="margin-left:10px"/>
+         <input type="submit" value="Search" />
+        </form>	
+		
+		<form action="{% url 'search3' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		নির্দিষ্ট শব্দের অর্থ পেতে এখানে খুঁজুন  (ইংরেজি -> বাংলা)  :  <input type="text" name="search3" style="margin-left:10px"/>
+         <input type="submit" value="Search" />
+        </form>	
+		
+		<form action="{% url 'search5' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		নির্দিষ্ট শব্দের সংখ্যা পেতে এখানে খুঁজুন    :  <input type="file" name="file5" style="margin-left:110px"/> <input type="text" name="search5" style=""/>
+         <input type="submit" value="Search" />
+        </form>	
+		
+		
+		<form action="{% url 'search2' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		শব্দের পদ পেতে এখানে খুঁজুন   :  <input type="text" name="search2" style="margin-left:160px"/>
+         <input type="submit" value="Search" />
+        </form>			
+		
+		
+      </td>
+    </tr>
+  </table>
+  
+ <div class="result" style="margin-left:200px">	
+{% if countWordResult %}
+<hr>
+  <p>শব্দের সংখ্যা :</p>
+	{% for item1, item2 in countWordResult %}
+		{{item1}}::{{item2}} 
+	</br>
+	</br>
+{% endfor %}
+{% endif %}
+
+{% if compactWordResult %}
+<hr>
+	<p>যুক্তবর্ণ সমূহ  :</p>
+     <pre>{{ compactWordResult }}</pre></p>
+	
+{% endif %}
+
+{% if zippingResult %}
+<hr>
+  <p><u>শব্দের অর্থ :</u></p>
+{% for item1, item2 in zippingResult %}
+	{{item2}}::{{item1}} 
+	</br>
+	</br>
+{% endfor %}
+{% endif %}
+
+
+{% if word_pos_result %}
+<hr>
+  <p>শব্দের পদ :</p>
+	{% for item1, item2 in word_pos_result %}
+			{{item1}}::{{item2}} 
+	</br>
+	</br>
+	{% endfor %}
+{% endif %}
+	
+	
+{% if wordSearchResult %}
+<hr>
+<p>
+	{{searchword}} : {{wordSearchResult}}
+</p>
+ {% endif %}
+ 
+{% if countWordResultfromSearch %}
+<hr>
+<p>শব্দের সংখ্যা :</p>
+	{{searchword}} : {{countWordResultfromSearch}}
+</p>
+ {% endif %} 
+ </div>
+ 
+ 
+
+ 
+ 
+ 
+</body>
+ 
+</html>
