@@ -1,0 +1,7 @@
+Install Django.
+Install Xampp.
+Clone or download the project.
+Load nlp.sql in Database.
+Open the cmd.
+Set the path to the project.
+Run the project in localhost.
