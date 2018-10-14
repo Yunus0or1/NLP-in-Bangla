@@ -1,10 +1,18 @@
 Install Django.
 Install mySQL client for Django.
 You can find how to install Django here : https://github.com/Yunus0or1/Guidelines-How_TO/blob/master/How%20to%20use%20Django%20Framework.txt
-Install Microsoft Visual C++ for mySQL client.
+This project need Python 3.6.2 as this is the last version [upto this text file creation] that supports mysqlclient.
 Install Xampp.
 Clone or download the project.
 Load nlp.sql in Database.
 Open the cmd.
 Set the path to the project.
 Run the project in localhost.
+
+
+You may need to pip these commands in terminal :
+
+pip install Django
+pip install nltk
+pip install googletrans
+pip install "mysqlclient==1.3.2"
