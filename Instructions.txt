@@ -1,4 +1,7 @@
 Install Django.
+Install mySQL client for Django.
+You can find how to install Django here : https://github.com/Yunus0or1/Guidelines-How_TO/blob/master/How%20to%20use%20Django%20Framework.txt
+Install Microsoft Visual C++ for mySQL client.
 Install Xampp.
 Clone or download the project.
 Load nlp.sql in Database.
