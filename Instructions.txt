@@ -16,3 +16,9 @@ pip install Django
 pip install nltk
 pip install googletrans
 pip install "mysqlclient==1.3.2"
+
+Update :
+
+When this project was being uploaded googletrans stopped working. So I would suggest everyone to check if googletrans working in that time.
+You have to check stackoverflow or Github discussion to fix this. You can use first 2 features like finding compound word and finding total
+number of bangla word easily. But you can not use those features which use googletrans to translate Bangla meaning to English.
