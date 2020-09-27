@@ -12,8 +12,11 @@ A simple web project in DJango Framwork to analys any Bangla Corpus. Uses Python
   - Set the path to the project.
   - Run the project in localhost.
   
-# pip Commands
+# pip commands
   - pip install Django
   - pip install nltk
   - pip install googletrans
   - pip install "mysqlclient==1.3.2"
+  
+# Update on googletrans library
+>When the project was developed google translator could be used without any API key.  But this project was being uploaded googletrans stopped working. So I would suggest everyone to check if googletrans working in that time. Check stackoverflow or Github discussion to fix this. You can use first features like finding compound word and finding total number of bangla word easily. But you can not use those features which use googletrans to translate Bangla meaning to English.
