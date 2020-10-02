@@ -26,11 +26,12 @@ A simple web project in DJango Framwork to analys any Bangla Corpus. Uses Python
     ```
     > goslate is alternative to googletrans.
   - To install nltk open cmd and
-    - Type these commands. 
+  
+    - Type this command. 
       ```
       pip install nltk 
       ```
-    - Open pythonShell write these. 
+    - Open python shell write these. 
       ```
       >>import nltk 
       >>nltk.download
